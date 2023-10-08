@@ -1,0 +1,19 @@
+name: update-content
+run-name: ${{ github.actor }} is updating content
+on: [push]
+jobs:
+  update-content:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+      - run: wget -O pizza.csv https://docs.google.com/spreadsheets/d/1iq9Lsr07r2JH4-V1avhaiayXFkhFJ909jQeWVJ1H2N4/gviz/tq?tqx=out:csv&sheet=Pizza
+      - run: mv pizza.csv content/pizza.csv
+      - run: |
+          git config --global user.name "Pizza Polak Bot"
+          git config --global user.email "me@kevinfabre.com"
+          git add -A
+          git commit -m "ci: Update content"
+          git push
