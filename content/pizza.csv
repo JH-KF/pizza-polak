@@ -1,4 +1,4 @@
 Nom,Prix,Catégorie,Visible,Ingrédients
-Reine,"10,00 €",Base tomate,OUI,"Sauce tomate, jambon, champignons, fromage"
-Poulet,"12,00 €",Base tomate,OUI,"Sauce tomate, poulet curry, mais, poivrons, curry, champignons, fromage, crème"
-Flamm,"10,00 €",Flams,OUI,"Crème, lardons, oignons"
+Reine,"10,00 €",PIZZA,OUI,"Sauce tomate, jambon, champignons, fromage"
+Poulet,"12,00 €",PIZZA,OUI,"Sauce tomate, poulet curry, mais, poivrons, curry, champignons, fromage, crème"
+Flamm,"10,00 €",FLAMM,OUI,"Crème, lardons, oignons"
