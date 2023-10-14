@@ -10,7 +10,7 @@ jobs:
         with:
           node-version: "20"
       - run: wget -O pizza.csv https://docs.google.com/spreadsheets/d/1iq9Lsr07r2JH4-V1avhaiayXFkhFJ909jQeWVJ1H2N4/gviz/tq?tqx=out:csv&sheet=Pizza
-      - run: mv pizza.csv content/pizza.csv
+      - run: mv pizza.csv src/content/pizza.csv
       - run: python3 scripts/parse.py
       - run: |
           git config --global user.name "Pizza Polak Bot"

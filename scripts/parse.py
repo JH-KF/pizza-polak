@@ -2,7 +2,7 @@ import csv
 import shutil
 
 # Open the input CSV file for reading
-with open('./content/pizza.csv', newline='') as input_file:
+with open('./src/content/pizza.csv', newline='') as input_file:
     reader = csv.reader(input_file)
     
     # Create a list to store the modified data
@@ -26,4 +26,4 @@ with open(temp_file, mode='w', newline='') as output_file:
         writer.writerow(row)
 
 # Replace the original file with the temporary file
-shutil.move(temp_file, './content/pizza.csv')
+shutil.move(temp_file, './src/content/pizza.csv')
