@@ -16,5 +16,4 @@ jobs:
           git config --global user.name "Pizza Polak Bot"
           git config --global user.email "me@kevinfabre.com"
           git add -A
-          git commit -m "ci: Update content"
-          git push
+          (git commit -m "ci: Update content" && git push) || exit 0
