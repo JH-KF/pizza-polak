@@ -1,6 +1,11 @@
 name: update-content
 run-name: ${{ github.actor }} is updating content
-on: [push]
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Every day at 5:00 AM and 7PM
+    - cron: "0 5,19 * * *"
 jobs:
   update-content:
     runs-on: ubuntu-latest
