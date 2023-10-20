@@ -1,5 +1,5 @@
 Nom,Prix,Catégorie,Visible,Ingrédients
-Reine,"10,00",PIZZA,OUI,"Sauce tomate, jambon, champignons, fromage"
 Poulet,"12,00",PIZZA,OUI,"Sauce tomate, poulet curry, mais, poivrons, curry, champignons, fromage, crème"
+Reine,"10,00",PIZZA,OUI,"Sauce tomate, jambon, champignons, fromage"
 Flamm,"10,00",FLAMM,OUI,"Crème, lardons, oignons"
-Roquette,"12,00",PIZZA,OUI,"Sauce tomate, jambon, champignons, jambon fumée, roquette, pecorino, vinaigre balsamique"
+Roquette,"12,00",PIZZA DE SAISON,OUI,"Sauce tomate, jambon, champignons, jambon fumée, roquette, pecorino, vinaigre balsamique"
