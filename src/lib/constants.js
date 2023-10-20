@@ -1,13 +1,8 @@
-const CATEGORY = {
+// key is for category values and value for category labels
+const CATEGORY_LABEL = {
   PIZZA: "Pizza",
   FLAMM: "Flamm",
-  SEASON_PIZZA: "Pizza de saison",
-};
-
-const CATEGORY_ADAPTOR = {
-  PIZZA: CATEGORY.PIZZA,
-  FLAMM: CATEGORY.FLAMM,
-  SEASON_PIZZA: CATEGORY.SEASON_PIZZA,
+  "PIZZA DE SAISON": "Pizza de saison",
 };
 
 const PIZZA_ADPATOR = {
@@ -18,4 +13,4 @@ const PIZZA_ADPATOR = {
   visible: "Visible",
 };
 
-module.exports = { CATEGORY_ADAPTOR, PIZZA_ADPATOR };
+module.exports = { CATEGORY_LABEL, PIZZA_ADPATOR };
