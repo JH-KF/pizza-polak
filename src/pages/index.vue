@@ -30,6 +30,34 @@ export default {
       .filter((p) => p.visible);
     this.pizzaByCategory = groupBy(pizzaList, "category");
   },
+
+  metaInfo() {
+    return {
+      title: "Carte",
+      meta: [
+        {
+          key: "keywords",
+          property: "keywords",
+          content: this.$page.metadata.keywords,
+        },
+        {
+          key: "og:image",
+          property: "og:image",
+          content: this.$page.metadata.ogImage,
+        },
+        {
+          key: "geo.region",
+          property: "geo.region",
+          content: this.$page.metadata.geoRegion,
+        },
+        {
+          key: "geo.placename",
+          property: "geo.placename",
+          content: this.$page.metadata.geoPlacename,
+        },
+      ],
+    };
+  },
 };
 </script>
 
@@ -46,6 +74,12 @@ export default {
           visible
         }
       }
+    }
+    metadata {
+      keywords
+      ogImage
+      geoRegion
+      geoPlacename
     }
   }
   </page-query>

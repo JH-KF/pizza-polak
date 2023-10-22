@@ -1,0 +1,3 @@
+Sitemap: https://pizza-polak.fr/sitemap.xml
+
+User-agent:*
