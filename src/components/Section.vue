@@ -10,8 +10,8 @@ const pizzaListByAscendingPrice = computed(() => {
 </script>
 
 <template>
-  <section>
-    <h2>{{ name }}</h2>
+  <section class="menu-card">
+    <h2 class="menu-card__title">{{ name }}</h2>
     <Pizza
       v-for="pizza in pizzaListByAscendingPrice"
       :pizza="pizza"

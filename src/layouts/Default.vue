@@ -1,20 +1,16 @@
 <template>
-  <div class="layout">
-    <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong>
+  <div>
+    <header>
+      <h1><span class="title-decorator">Polak</span> Pizza</h1>
     </header>
-    <slot />
+    <main>
+      <slot />
+    </main>
   </div>
 </template>
 
 <static-query>
-query {
-  metadata {
-    siteName
-  }
-}
+
 </static-query>
 
 <style></style>
