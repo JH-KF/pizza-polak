@@ -5,6 +5,8 @@ const CATEGORY_LABEL = {
   "PIZZA DE SAISON": "Pizza de saison",
 };
 
+const CATEGORY_ORDER = [CATEGORY_LABEL.PIZZA, CATEGORY_LABEL["PIZZA DE SAISON"], CATEGORY_LABEL.FLAMM]
+
 const PIZZA_ADPATOR = {
   name: "Nom",
   price: "Prix",
@@ -13,4 +15,4 @@ const PIZZA_ADPATOR = {
   visible: "Visible",
 };
 
-module.exports = { CATEGORY_LABEL, PIZZA_ADPATOR };
+module.exports = { CATEGORY_LABEL, CATEGORY_ORDER, PIZZA_ADPATOR };

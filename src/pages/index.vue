@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <Section
-      v-for="category in Object.keys(pizzaByCategory)"
+      v-for="category in CATEGORY_ORDER"
       :key="category"
       :name="category"
       :pizzaList="pizzaByCategory[category]"
@@ -12,6 +12,7 @@
 <script>
 import { groupBy } from "lodash";
 
+import { CATEGORY_ORDER } from "~/lib/constants"
 import Section from "../components/Section";
 
 export default {
@@ -25,10 +26,19 @@ export default {
   },
 
   created() {
+  this.CATEGORY_ORDER = CATEGORY_ORDER;
     const pizzaList = this.$page.pizzaList.edges
       .map((pizza) => pizza.node)
-      .filter((p) => p.visible);
-    this.pizzaByCategory = groupBy(pizzaList, "category");
+      .filter((p) => p.visible)
+      // Because pizza are fetched in reverse order
+      .reverse();
+    this.pizzaByCategory = pizzaList.reduce((acc, currentPizza) => {
+      if(!acc[currentPizza.category]) {
+        acc[currentPizza.category] = [];
+      }
+      acc[currentPizza.category].push(currentPizza);
+      return acc
+    }, {});
   },
 
   metaInfo() {
