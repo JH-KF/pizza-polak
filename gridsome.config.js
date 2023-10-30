@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: "Pizza Polak",
+  siteName: "Polak Pizza",
   siteDescription:
     "Pizza maison cuites au feu à bois. A venir cherchez à Farschviller.",
   siteUrl: "https://pizza-polak.fr",
