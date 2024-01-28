@@ -1,2 +1,2 @@
-/*O_o*/
-"google.visualization.Query.setResponse({""version"":""0.6""","reqId:""0""","status:""ok""","sig:""1954215582""","table:{""cols"":[{""id"":""A""","label:""Prochaines dates (JJ/MM/AAAA)""","type:""date""","pattern:""dd/MM/yyyy""}]","rows:[{""c"":[{""v"":""Date(2024",1,"10)""","f:""10/02/2024""}]}]",parsedNumHeaders:1}});
+Prochaines dates (JJ/MM/AAAA)
+10/02/2024
