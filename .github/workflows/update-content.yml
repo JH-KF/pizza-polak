@@ -14,8 +14,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "20"
-      - run: wget -O pizza.csv https://docs.google.com/spreadsheets/d/1iq9Lsr07r2JH4-V1avhaiayXFkhFJ909jQeWVJ1H2N4/gviz/tq?tqx=out:csv&sheet=Pizza
-      - run: wget -O openingDates.csv https://docs.google.com/spreadsheets/d/1iq9Lsr07r2JH4-V1avhaiayXFkhFJ909jQeWVJ1H2N4/gviz/tq?tqx=out:csv&sheet=Ouverture
+      - run: curl -o pizza.csv "https://docs.google.com/spreadsheets/d/1iq9Lsr07r2JH4-V1avhaiayXFkhFJ909jQeWVJ1H2N4/gviz/tq?sheet=Pizza&tqx=out:csv"
+      - run: curl -o openingDates.csv "https://docs.google.com/spreadsheets/d/1iq9Lsr07r2JH4-V1avhaiayXFkhFJ909jQeWVJ1H2N4/gviz/tq?sheet=Ouverture&tqx=out:csv"
       - run: mv pizza.csv src/content/pizza.csv
       - run: mv openingDates.csv src/content/openingDates.csv
       - run: python3 scripts/parse.py
