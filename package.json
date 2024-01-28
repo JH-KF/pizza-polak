@@ -12,7 +12,8 @@
     "@gridsome/plugin-sitemap": "^0.4.0",
     "csv-parse": "^5.5.2",
     "gridsome": "^0.7.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "luxon": "^3.4.4"
   },
   "devDependencies": {
     "sass": "^1.69.5",

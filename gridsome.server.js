@@ -7,6 +7,7 @@
 const { readFileSync } = require("fs");
 const { parse } = require("csv-parse/sync");
 const Pizza = require("./src/lib/Pizza");
+const Date = require("./src/lib/Date");
 
 module.exports = function(api) {
   // api.loadSource(({ addCollection }) => {
@@ -19,17 +20,38 @@ module.exports = function(api) {
 
   // Create Pizza collection
   api.loadSource((actions) => {
-    const input = readFileSync("./src/content/pizza.csv", "utf8");
-    const collection = actions.addCollection("Pizza");
+    const pizzaInput = readFileSync("./src/content/pizza.csv", "utf8");
+    const pizzaCollection = actions.addCollection("Pizza");
 
-    const list = parse(input, {
+    const pizzaList = parse(pizzaInput, {
       columns: true,
       delimiter: ",",
       skipEmptyLines: true,
     });
 
-    list.forEach((pizza) => {
-      collection.addNode(JSON.parse(JSON.stringify(new Pizza(pizza))));
+    pizzaList.forEach((pizza) => {
+      pizzaCollection.addNode(JSON.parse(JSON.stringify(new Pizza(pizza))));
     });
+
+    const openingDatesInput = readFileSync(
+      "./src/content/openingDates.csv",
+      "utf8"
+    );
+    const openingDatesCollection = actions.addCollection("OpeningDates");
+    const openingDatesList = parse(openingDatesInput, {
+      columns: true,
+      delimiter: ",",
+      skipEmptyLines: true,
+    });
+    if (openingDatesList.length) {
+      openingDatesList.forEach((date) => {
+        openingDatesCollection.addNode(
+          JSON.parse(JSON.stringify(new Date(date)))
+        );
+      });
+    } else {
+      // Add empty date to not make app to crash
+      openingDatesCollection.addNode(new Date(null));
+    }
   });
 };
