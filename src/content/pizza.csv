@@ -1,14 +1,2 @@
-Nom,Prix,Catégorie,Visible,Ingrédients
-Poulet,"12,00",PIZZA,OUI,"Sauce tomate, poulet curry, mais, poivrons, curry, champignons, fromage, crème"
-Reine,"10,00",PIZZA,OUI,"Sauce tomate, jambon, champignons, fromage"
-Quatre saisons,"10,00",PIZZA,OUI,"Sauce tomate, jambon, champignons, poivrons, artichaut, maïs, fromage"
-Roquette,"12,00",PIZZA DE SAISON,OUI,"Sauce tomate, jambon, champignons, jambon fumée, roquette, pecorino, vinaigre balsamique"
-Salami,"10,00",PIZZA,OUI,"Sauce tomate, jambon, salami, champignons, fromage"
-Piquante ,"10,00",PIZZA,OUI,"Sauce tomate, salami piquant, piments du jardin, champignons, fromage"
-Perso ,"12,00",PIZZA DE SAISON,OUI,ingrédients de la carte au choix
-Quatre fromages,"12,00",PIZZA,OUI,"Sauce tomate, bleu, chèvre, mozzarella, emmental"
-Flamm,"10,00",FLAMM,OUI,"Crème, lardons, oignons "
-Flamm gratinée,"10,00",FLAMM,OUI,"Crème, lardons, oignons, fromage"
-Flamm forestière,"10,00",FLAMM,OUI,"Crème, lardons, oignons,champignons,fromage"
-Flamm munster ,"12,00",FLAMM,OUI,"Crème, lardons, oignons,champignons,fromage,munster "
-Flamm chef ,"12,00",FLAMM,OUI,"Crème, lardons, oignons,champignons, ail, persil, fromage,munster"
+)]}'
+"{""version"":""0.6""","status:""error""","errors:[{""reason"":""internal_error""","message:""INTERNAL_ERROR""","detailed_message:""Cannot load spreadsheet.""}]}"
