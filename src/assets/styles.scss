@@ -1,6 +1,7 @@
 :root {
   font-size: 16px;
   --red: #ff4949;
+  --ligth-100: white;
 }
 
 html {
@@ -26,7 +27,7 @@ body {
   margin: 0px;
   padding: 0px;
 
-  min-width: 340px;
+  min-width: 300px;
 }
 
 header {
@@ -46,17 +47,24 @@ header {
 main {
   margin: auto;
   max-width: 780px;
+  padding: 0 1rem;
 }
 
 footer {
+  border-top: double;
+  border-color: var(--red);
   text-align: center;
-  background-color: white;
+  background-color: var(--ligth-100);
   padding: 1rem;
 }
 
 .hero {
   text-align: center;
   margin: 2rem auto;
+  padding: 1rem;
+  border: double;
+  border-color: var(--red);
+  background-color: var(--ligth-100);
 
   > * {
     margin-bottom: 1rem;
@@ -81,10 +89,12 @@ footer {
 .menu-card {
   position: relative;
   max-width: 100%;
-  background-color: white;
+  background-color: var(--ligth-100);
   padding: 1rem;
   margin-bottom: 3rem;
+  border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.044) 0px 0px 5px 3px;
+  background-image: url("/section-backgound.png");
 
   .menu-card__title {
     margin-bottom: 1.5rem;
@@ -92,18 +102,6 @@ footer {
     text-align: center;
     color: var(--red);
     font-family: "Swanky and Moo Moo", sans-serif;
-  }
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0.3;
-    background-color: rgba(253, 252, 247, 0.7);
-    background-image: url("/section-backgound.png");
   }
 
   .pizza {
@@ -126,8 +124,14 @@ footer {
 
 // RESPONSIVE
 @media screen and (max-width: 500px) {
+  main {
+    padding: 0 0.5rem;
+  }
   header h1 {
     font-size: 2.5rem;
+  }
+  .hero .opening_date {
+    font-size: 1.25rem;
   }
   .menu-card .menu-card__title {
     font-size: 2rem;
