@@ -7,6 +7,15 @@
       :name="category"
       :pizzaList="pizzaByCategory[category]"
     ></Section>
+    <Section
+      name="Desserts"
+      :pizzaList="[
+        {
+          name: 'Tiramisu maison',
+          price: 4,
+        },
+      ]"
+    ></Section>
   </Layout>
 </template>
 
