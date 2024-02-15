@@ -5,16 +5,11 @@
       v-for="category in CATEGORY_ORDER"
       :key="category"
       :name="category"
-      :pizzaList="pizzaByCategory[category]"
+      :items="pizzaByCategory[category]"
     ></Section>
     <Section
       name="Desserts"
-      :pizzaList="[
-        {
-          name: 'Tiramisu maison',
-          price: 4,
-        },
-      ]"
+      :items="desserts"
     ></Section>
   </Layout>
 </template>
@@ -32,11 +27,15 @@ export default {
   data() {
     return {
       pizzaByCategory: {},
+      desserts: [],
     };
   },
 
   created() {
     this.CATEGORY_ORDER = CATEGORY_ORDER;
+    this.desserts = this.$page.dessertList.edges
+      .map((dessert) => dessert.node)
+      .filter((p) => p.visible);
     const pizzaList = this.$page.pizzaList.edges
       .map((pizza) => pizza.node)
       .filter((p) => p.visible)
@@ -91,6 +90,16 @@ export default {
           price
           ingredients
           category
+          visible
+        }
+      }
+    }
+    dessertList: allDessert {
+      edges {
+        node {
+          id
+          name
+          price
           visible
         }
       }

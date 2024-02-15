@@ -6,6 +6,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 const { readFileSync } = require("fs");
 const { parse } = require("csv-parse/sync");
+const Dessert = require("./src/lib/Dessert");
 const Pizza = require("./src/lib/Pizza");
 const Date = require("./src/lib/Date");
 
@@ -31,6 +32,19 @@ module.exports = function(api) {
 
     pizzaList.forEach((pizza) => {
       pizzaCollection.addNode(JSON.parse(JSON.stringify(new Pizza(pizza))));
+    });
+
+    const dessertInput = readFileSync("./src/content/desserts.csv", "utf8");
+    const dessertCollection = actions.addCollection("Dessert");
+
+    const dessertList = parse(dessertInput, {
+      columns: true,
+      delimiter: ",",
+      skipEmptyLines: true,
+    });
+
+    dessertList.forEach((dessert) => {
+      dessertCollection.addNode(JSON.parse(JSON.stringify(new Dessert(dessert))));
     });
 
     const openingDatesInput = readFileSync(

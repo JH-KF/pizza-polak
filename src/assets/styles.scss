@@ -104,18 +104,18 @@ footer {
     font-family: "Swanky and Moo Moo", sans-serif;
   }
 
-  .pizza {
+  .item {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
     margin-bottom: 1.5rem;
 
-    .pizza__separator {
+    .item__separator {
       flex-grow: 1;
       margin: 0 0.5rem;
       border-bottom: 1px dotted black;
     }
-    .pizza__ingredients {
+    .item__ingredients {
       margin-top: 0.2rem;
       flex-basis: 100%;
     }

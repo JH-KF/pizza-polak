@@ -33,3 +33,4 @@ def _parse(file):
 
 _parse("pizza")
 _parse("openingDates")
+_parse('desserts')

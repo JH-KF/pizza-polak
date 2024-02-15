@@ -19,6 +19,12 @@ const PIZZA_ADPATOR = {
   visible: "Visible",
 };
 
+const DESSERT_ADPATOR = {
+  name: "Nom",
+  price: "Prix",
+  visible: "Visible",
+};
+
 const OPENING_DATES_ADAPTOR = {
   date: "Prochaines dates (JJ/MM/AAAA)",
 };
@@ -27,5 +33,6 @@ module.exports = {
   CATEGORY_LABEL,
   CATEGORY_ORDER,
   PIZZA_ADPATOR,
+  DESSERT_ADPATOR,
   OPENING_DATES_ADAPTOR,
 };

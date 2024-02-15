@@ -1,21 +1,21 @@
 <script setup>
 import { computed } from "vue";
 
-import Pizza from "./Pizza.vue";
+import SectionItem from "./SectionItem.vue";
 
-const { name, pizzaList } = defineProps(["name", "pizzaList"]);
-const pizzaListByAscendingPrice = computed(() => {
-  return pizzaList.sort((a, b) => a.price - b.price);
+const { name, items } = defineProps(["name", "items"]);
+const itemsByAscendingPrice = computed(() => {
+  return items.sort((a, b) => a.price - b.price);
 });
 </script>
 
 <template>
   <section class="menu-card">
     <h2 class="menu-card__title">{{ name }}</h2>
-    <Pizza
-      v-for="pizza in pizzaListByAscendingPrice"
-      :pizza="pizza"
-      :key="pizza.id"
+    <SectionItem
+      v-for="item in itemsByAscendingPrice"
+      :item="item"
+      :key="item.id"
     />
   </section>
 </template>
