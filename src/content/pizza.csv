@@ -2,7 +2,7 @@ Nom,Prix,Catégorie,Visible,Ingrédients
 Poulet,"12,00",PIZZA,OUI,"Sauce tomate, poulet curry, maïs, poivrons, curry, champignons, fromage, crème"
 Reine,"10,00",PIZZA,OUI,"Sauce tomate, jambon, champignons, fromage"
 Quatre saisons,"10,00",PIZZA,OUI,"Sauce tomate, jambon, champignons, poivrons, artichaut, maïs, fromage"
-Roquette,"12,00",PIZZA DE SAISON,OUI,"Sauce tomate, jambon, champignons, jambon fumée, roquette, copeaux de parmesan ,billes balsamiques "
+Roquette,"12,00",PIZZA DE SAISON,OUI,"Sauce tomate, jambon, champignons, jambon fumée, roquette, fromage ,copeaux de parmesan ,billes balsamiques "
 Salami,"10,00",PIZZA,OUI,"Sauce tomate, jambon, salami, champignons, fromage "
 Piquante ,"10,00",PIZZA,NON,"Sauce tomate, salami piquant, piments du jardin *, champignons, fromage"
 Saumon ,"15,00",PIZZA DE SAISON,OUI,"Sauce tomate ou crème, saumon fumé, oignon,aneth, billés citrons "
