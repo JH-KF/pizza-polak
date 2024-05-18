@@ -22,6 +22,7 @@ jobs:
       - run: mv desserts.csv src/content/desserts.csv
       - run: python3 scripts/parse.py
       - run: |
+          git pull
           git config --global user.name "Pizza Polak Bot"
           git config --global user.email "me@kevinfabre.com"
           git add -A
