@@ -10,7 +10,7 @@ const itemsByAscendingPrice = computed(() => {
 </script>
 
 <template>
-  <section class="menu-card">
+  <section v-if="items.length" class="menu-card">
     <h2 class="menu-card__title">{{ name }}</h2>
     <SectionItem
       v-for="item in itemsByAscendingPrice"
