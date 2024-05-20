@@ -14,6 +14,10 @@
   </Layout>
 </template>
 
+<style>
+  @import './index.scss';
+</style>
+
 <script>
 import { CATEGORY_ORDER } from "~/lib/constants";
 import Section from "../components/Section";
