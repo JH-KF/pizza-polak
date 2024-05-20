@@ -11,7 +11,7 @@
     </Layout>
   </template>
 
-<style>
+<style scoped>
   @import "./flyer.scss";
 </style>
   

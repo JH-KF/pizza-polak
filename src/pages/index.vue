@@ -14,7 +14,7 @@
   </Layout>
 </template>
 
-<style>
+<style scoped>
   @import './index.scss';
 </style>
 
