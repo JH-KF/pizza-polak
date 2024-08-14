@@ -11,12 +11,12 @@
         >1b rue Saint-Jean, 57450 Farschviller</a
       >
     </div>
-    <div>📞 <a href="tel:+33672703236"> 06 72 70 32 36</a></div>
+    <div>📞 <a href="tel:+33766998745"> 07 66 99 87 45</a></div>
     <div>💰 Paiement uniquement en espèces</div>
   </section>
 </template>
 
-<script>
+<script>  
 export default {
   data() {
     return {
