@@ -4,7 +4,7 @@ import shutil
 
 def _parse(file):
     # Open the input CSV file for reading
-    with open(f"./src/content/{file}.csv", newline='') as input_file:
+    with open(f"./client/src/content/{file}.csv", newline='') as input_file:
         reader = csv.reader(input_file)
         
         # Create a list to store the modified data
@@ -28,7 +28,7 @@ def _parse(file):
             writer.writerow(row)
 
     # Replace the original file with the temporary file
-    shutil.move(temp_file, f"./src/content/{file}.csv") 
+    shutil.move(temp_file, f"./client/src/content/{file}.csv") 
 
 
 _parse("pizza")
