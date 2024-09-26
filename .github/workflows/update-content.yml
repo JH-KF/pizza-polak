@@ -17,9 +17,9 @@ jobs:
       - run: curl -o pizza.csv "https://docs.google.com/spreadsheets/d/1iq9Lsr07r2JH4-V1avhaiayXFkhFJ909jQeWVJ1H2N4/gviz/tq?sheet=Pizza&tqx=out:csv"
       - run: curl -o openingDates.csv "https://docs.google.com/spreadsheets/d/1iq9Lsr07r2JH4-V1avhaiayXFkhFJ909jQeWVJ1H2N4/gviz/tq?sheet=Ouverture&tqx=out:csv"
       - run: curl -o desserts.csv "https://docs.google.com/spreadsheets/d/1iq9Lsr07r2JH4-V1avhaiayXFkhFJ909jQeWVJ1H2N4/gviz/tq?sheet=Desserts&tqx=out:csv"
-      - run: mv pizza.csv src/client/content/pizza.csv
-      - run: mv openingDates.csv src/client/content/openingDates.csv
-      - run: mv desserts.csv src/client/content/desserts.csv
+      - run: mv pizza.csv client/src/content/pizza.csv
+      - run: mv openingDates.csv client/src/content/openingDates.csv
+      - run: mv desserts.csv client/src/content/desserts.csv
       - run: python3 scripts/parse.py
       - run: |
           git pull
