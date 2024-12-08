@@ -21,7 +21,7 @@ h6 {
 body {
   font-family: "Roboto", sans-serif;
 
-  background-image: url("/background.svg");
+  background-image: url("~/assets/images/background.svg");
   background-attachment: fixed;
 
   margin: 0px;
@@ -94,7 +94,7 @@ footer {
   margin-bottom: 3rem;
   border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.044) 0px 0px 5px 3px;
-  background-image: url("/section-backgound.png");
+  background-image: url("~/assets/images/section-backgound.png");
 
   .menu-card__title {
     margin-bottom: 1.5rem;

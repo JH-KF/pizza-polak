@@ -14,16 +14,3 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "20"
-      - run: curl -o pizza.csv "https://docs.google.com/spreadsheets/d/1iq9Lsr07r2JH4-V1avhaiayXFkhFJ909jQeWVJ1H2N4/gviz/tq?sheet=Pizza&tqx=out:csv"
-      - run: curl -o openingDates.csv "https://docs.google.com/spreadsheets/d/1iq9Lsr07r2JH4-V1avhaiayXFkhFJ909jQeWVJ1H2N4/gviz/tq?sheet=Ouverture&tqx=out:csv"
-      - run: curl -o desserts.csv "https://docs.google.com/spreadsheets/d/1iq9Lsr07r2JH4-V1avhaiayXFkhFJ909jQeWVJ1H2N4/gviz/tq?sheet=Desserts&tqx=out:csv"
-      - run: mv pizza.csv client/src/content/pizza.csv
-      - run: mv openingDates.csv client/src/content/openingDates.csv
-      - run: mv desserts.csv client/src/content/desserts.csv
-      - run: python3 scripts/parse.py
-      - run: |
-          git pull
-          git config --global user.name "Pizza Polak Bot"
-          git config --global user.email "me@kevinfabre.com"
-          git add -A
-          (git commit -m "ci: Update content 📦" && git push) || exit 0
