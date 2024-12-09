@@ -1,14 +1,13 @@
 <script setup>
 const query = groq`{ "configuration": *[_type == "globalConfiguration"]}`
 const { data } = useSanityQuery(query)
-
 </script>
 
 <template>
   <section class="hero">
     <h3>Prochaine ouverture le</h3>
     <div class="opening_date">
-      {{  new Intl.DateTimeFormat("fr", {year: 'numeric', month: 'long', day: "numeric", "weekday": "long"}).format(data.configuration.opening_date) }}
+      {{  Intl.DateTimeFormat("fr", {year: 'numeric', month: 'long', day: "numeric", "weekday": "long"}).format(new Date(data.configuration[0].opening_date)) }}
     </div>
     <div>🕐 18:30h à 20:30h</div>
     <div>
