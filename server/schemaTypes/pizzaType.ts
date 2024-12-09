@@ -42,4 +42,19 @@ export const pizzaType = defineType({
             validation: (v) => v.required()
         }),
     ],
+    preview: {
+        select: {
+            name: 'name',
+            isAvailable: 'is_available',
+            price: 'price',
+        },
+        prepare(selection) {
+            const { name, isAvailable, price } = selection;
+            return {
+                title: `${name} - ${price}€`,
+                subtitle: isAvailable ? "✅ Visible" : "❌ Non visible",
+                media: ''
+            };
+        },
+    },
 })

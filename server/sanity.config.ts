@@ -1,6 +1,7 @@
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
+import {frFRLocale} from '@sanity/locale-fr-fr' 
 import {schemaTypes} from './schemaTypes'
 
 
@@ -17,10 +18,12 @@ export default defineConfig({
   projectId: 'ood03zu3',
   dataset: 'production',
 
-  plugins: [structureTool(  {
+  plugins: [
+    frFRLocale(),
+    structureTool(  {
     structure: (S) =>
       S.list()
-        .title("Content")
+        .title("Données")
         .items([
 
           // Our singleton type has a list item with a custom child
@@ -36,14 +39,14 @@ export default defineConfig({
                 .documentId("globalConfigurationSingleton")
             ),
           S.documentTypeListItem("pizza").title("Pizza au menu"),
+          S.documentTypeListItem("opening").title("Ouvertures"),
         ]),
   }), visionTool()],
 
   schema: {
     types: schemaTypes,
-        // Filter out singleton types from the global “New document” menu options
         templates:   (templates) =>
-          templates.filter(({ schemaType }) => !singletonTypes.has(schemaType)),
+          templates.filter(({ schemaType }) => ["pizza", "opening"].includes(schemaType)),
   },
 
   document: {
