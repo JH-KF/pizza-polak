@@ -1,8 +1,10 @@
-import {defineConfig} from 'sanity'
-import {structureTool} from 'sanity/structure'
-import {visionTool} from '@sanity/vision'
-import {frFRLocale} from '@sanity/locale-fr-fr' 
-import {schemaTypes} from './schemaTypes'
+import {defineConfig} from 'sanity';
+import {structureTool} from 'sanity/structure';
+import {visionTool} from '@sanity/vision';
+import {frFRLocale} from '@sanity/locale-fr-fr';
+
+import {schemaTypes} from './schemaTypes';
+import OpeningDetails from './components/OpeningDetails';
 
 
 // Define the actions that should be available for singleton documents
@@ -39,7 +41,23 @@ export default defineConfig({
                 .documentId("globalConfigurationSingleton")
             ),
           S.documentTypeListItem("pizza").title("Pizza au menu"),
-          S.documentTypeListItem("opening").title("Ouvertures"),
+          S.listItem()
+            .title('Ouvertures')
+            .schemaType('opening')
+            .child(
+              S.documentTypeList('opening')
+                .title('Ouvertures')
+                .child(documentId =>
+                  S.document()
+                    .documentId(documentId)
+                    .schemaType('opening')
+                    .views([
+                      S.view.form().title("Editeur"),
+                      S.view.component(OpeningDetails)
+                        .title('Détails')
+                    ])
+                )
+            )
         ]),
   }), visionTool()],
 

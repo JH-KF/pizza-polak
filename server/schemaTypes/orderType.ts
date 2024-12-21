@@ -44,7 +44,7 @@ export const orderType = defineType({
             const { orderName, orderItems, orderTime } = selection;
             return {
                 title: `${orderName}`,
-                subtitle: `${orderTime} - Pizza : ${orderItems?.length || 0}`,
+                subtitle: `${orderTime || ' ⚠️ Horaire à définir'} - Pizza : ${orderItems?.length || 0}`,
                 media: ''
             };
         },

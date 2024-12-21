@@ -1,36 +1,10 @@
 import {defineField, defineType} from 'sanity'
+import { Order } from '../types';
 
 
-type Order = {
-    order_name: string;
-    order_time: string;
-    order_items?: OrderItem[]
-}
-
-type OrderItem = {
-    order_item_reference: Pizza
-    order_item_comment: string
-}
-
-type Pizza = {
-    name: string;
-    price: number;
-    ingredients: string;
-    pizza_section:  'pizza' | 'season' | 'flamm';
-    is_available: boolean;
-}
-
-function getTotalPizza(orders: Order[]) {
+function getTotalPizza(orders: Order[] | undefined = []) {
     return orders.reduce((total, current) => {
         return total + (current.order_items?.length || 0);
-    }, 0)
-}
-
-function getTotalPizzaCash(orders: Order[]) {
-    return orders.reduce((total, currentOrder) => {
-        return total + (currentOrder.order_items?.reduce((totalCash, currentOrderItem) => {
-            return totalCash + currentOrderItem?.order_item_reference.price;
-        }, 0) || 0);
     }, 0)
 }
 
@@ -59,7 +33,6 @@ export const openingType = defineType({
         },
         prepare(selection) {
             const { date, orders } = selection;
-            const cash = `💰 ${getTotalPizzaCash(orders)}€`;
             const formattedDate = date && `Ouveture du ${Intl.DateTimeFormat("fr", {"day": "numeric", weekday: "short", month: "short", year: "2-digit"}).format(new Date(date))}`
             return {
                 title: `${formattedDate}`,

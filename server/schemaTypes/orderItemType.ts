@@ -10,6 +10,11 @@ export const orderItemType = defineType({
             title: 'Pizza',
             type: 'reference',
             to: [{type: 'pizza'}],
+            options: {
+                disableNew: true,
+                filter: 'is_available == $filter',
+                filterParams: {filter: true},
+            },
             validation: (v) => v.required()
             
         }),
@@ -28,7 +33,7 @@ export const orderItemType = defineType({
         prepare(selection) {
             const { pizzaName, pizzaPrice, subtitle } = selection;
             return {
-                title: `${pizzaName} - ${pizzaPrice}€`,
+                title:  pizzaName ? `${pizzaName} - ${pizzaPrice}€` : '⚠️ Pizza à définir',
                 subtitle: subtitle,
                 media: ''
             };
