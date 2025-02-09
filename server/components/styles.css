@@ -1,0 +1,60 @@
+#printable {
+  padding: 16px;
+}
+
+.orders {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.order-card {
+  page-break-inside: avoid;
+  background: #fff;
+  border: 1px #333 solid;
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.order-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.order-header h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.order-info {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.order-items {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: start;
+}
+
+.order-item {
+  background: #f0efef;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline;
+}
+
+.order-comment {
+  font-style: italic;
+  color: #666;
+}

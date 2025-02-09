@@ -1,52 +1,107 @@
 import {defineField, defineType} from 'sanity'
 
+const ORDER_TIMES = [
+  '17:00',
+  '17:05',
+  '17:10',
+  '17:15',
+  '17:20',
+  '17:25',
+  '17:30',
+  '17:35',
+  '17:40',
+  '17:45',
+  '17:50',
+  '17:55',
+  '18:00',
+  '18:05',
+  '18:10',
+  '18:15',
+  '18:20',
+  '18:25',
+  '18:30',
+  '18:35',
+  '18:40',
+  '18:45',
+  '18:50',
+  '18:55',
+  '19:00',
+  '19:05',
+  '19:10',
+  '19:15',
+  '19:20',
+  '19:25',
+  '19:30',
+  '19:35',
+  '19:40',
+  '19:45',
+  '19:50',
+  '19:55',
+  '20:00',
+  '20:05',
+  '20:10',
+  '20:15',
+  '20:20',
+  '20:25',
+  '20:30',
+  '20:35',
+  '20:40',
+  '20:45',
+  '20:50',
+  '20:55',
+  '21:00',
+  '21:05',
+  '21:10',
+  '21:15',
+  '21:20',
+  '21:25',
+  '21:30',
+  '21:35',
+  '21:40',
+  '21:45',
+  '21:50',
+  '21:55',
+  '22:00',
+]
+
 export const orderType = defineType({
-    name: 'order',
-    title: 'Commande',
-    type: 'document',
-    fields: [
-        defineField({
-            name: 'order_name',
-            title: 'Nom de la commande',
-            type: 'string',
-            validation: (v) => v.required()
-        }),
-        defineField({
-            name: 'order_time',
-            title: 'Heure de commande',
-            type: 'string',
-            options: {
-                list: [
-                    "17:00", "17:15", "17:30", "17:45",
-                    "18:00", "18:15", "18:30", "18:45",
-                    "19:00", "19:15", "19:30", "19:45",
-                    "20:00", "20:15", "20:30", "20:45",
-                    "21:00", "21:15", "21:30", "21:45",
-                    "22:00"
-                ]     
-            },
-            validation: (v) => v.required()
-        }),
-        defineField({
-            name: 'order_items',
-            title: 'Liste des pizza',
-            type: 'array',
-            of: [{type: 'orderItem'}],
-        }),
-    ],
-    preview: {
-        select: {
-            orderName: 'order_name',
-            orderTime: 'order_time',
-            orderItems: 'order_items',
-        },
-        prepare(selection) {
-            const { orderName, orderItems, orderTime } = selection;
-            return {
-                title: `${orderName}`,
-                subtitle: `${orderTime || ' ⚠️ Horaire à définir'} - Pizza : ${orderItems?.length || 0}`,
-                media: ''
-            };
-        },
+  name: 'order',
+  title: 'Commande',
+  type: 'document',
+  fields: [
+    defineField({
+      name: 'order_name',
+      title: 'Nom de la commande',
+      type: 'string',
+      validation: (v) => v.required(),
+    }),
+    defineField({
+      name: 'order_time',
+      title: 'Heure de commande',
+      type: 'string',
+      options: {list: ORDER_TIMES},
+      validation: (v) => v.required(),
+    }),
+    defineField({
+      name: 'order_items',
+      title: 'Liste des pizza',
+      type: 'array',
+      of: [{type: 'orderItem'}],
+    }),
+  ],
+  preview: {
+    select: {
+      orderName: 'order_name',
+      orderTime: 'order_time',
+      orderItems: 'order_items',
     },
+    prepare(selection) {
+      const {orderName, orderItems, orderTime} = selection
+      return {
+        title: `${orderName}`,
+        subtitle: `${orderTime || ' ⚠️ Horaire à définir'} - Pizza : ${orderItems?.length || 0}`,
+        media: '',
+      }
+    },
+  },
 })

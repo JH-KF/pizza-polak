@@ -4,26 +4,38 @@ import html2pdf from 'html2pdf.js'
 
 import {Opening, Order as OrderT} from '../types'
 
+import './styles.css'
+
 function Order({order_items, order_name, order_time}: OrderT) {
   const total = order_items?.reduce((acc, item) => acc + item.order_item_reference?.price || 0, 0)
 
   return (
-    <section>
-      <h3>
-        {order_time} - {order_name} - pizza : {order_items?.length || 0} - Total : {total || '0'} €
-      </h3>
-      <div>
+    <div className="order-card">
+      <div className="order-header">
+        <h3>
+          {order_time} - {order_name}
+        </h3>
+        <p className="order-info">
+          Pizza : {order_items?.length || 0} | Total : <b>{total || '0'} €</b>
+        </p>
+      </div>
+
+      <div className="order-items">
         {order_items?.map((item, index) => (
-          <div key={index}>
+          <div key={index} className="order-item">
             <b>
               {item.order_item_reference?.price} € - {item.order_item_reference?.name}
+              {!!item.order_item_comment && (
+                <span>
+                  &nbsp; - &nbsp;
+                  <i className="order-comment">{item.order_item_comment}</i>
+                </span>
+              )}
             </b>
-            &nbsp;
-            <i>{item.order_item_comment}</i>
           </div>
         ))}
       </div>
-    </section>
+    </div>
   )
 }
 
@@ -82,10 +94,10 @@ function OpeningDetails({documentId}: {documentId: string}) {
     const element = document.getElementById('printable')
     html2pdf()
       .set({
-        margin: 4,
+        margin: 8,
         filename: openingDateTitle,
         image: {type: 'png', quality: 1},
-        html2canvas: {scale: 2},
+        html2canvas: {scale: 1.5},
       })
       .from(element)
       .save()
@@ -98,15 +110,11 @@ function OpeningDetails({documentId}: {documentId: string}) {
       <hr />
       <div id="printable">
         <h3>Pâtons : {summary.pizzaCount}</h3>
-        <hr />
-        {orders.map((order, index) =>
-          order.order_time ? (
-            <>
-              <Order key={index} {...order} />
-              <hr />
-            </>
-          ) : null,
-        )}
+        <div className="orders">
+          {orders.map((order, index) =>
+            order.order_time ? <Order key={index} {...order} /> : null,
+          )}
+        </div>
       </div>
     </>
   )
