@@ -12,7 +12,7 @@
   "dependencies": {
     "@fontsource/swanky-and-moo-moo": "^5.1.0",
     "@nuxtjs/sanity": "^1.13.1",
-    "nuxt": "^3.14.1592",
+    "nuxt": "^3.16.0",
     "vue": "latest",
     "vue-router": "latest"
   },
