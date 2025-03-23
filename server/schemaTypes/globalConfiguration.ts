@@ -11,5 +11,12 @@ export const globalConfigurationType = defineType({
             type: 'date',
             validation: (v) => v.required(),
         }),
+
+        defineField({
+            name: 'arancini_available',
+            title: "Vente d'arancini",
+            type: 'boolean',
+            initialValue: true
+        }),
     ],
 })

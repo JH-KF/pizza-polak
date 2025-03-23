@@ -4,7 +4,9 @@ const { item } = defineProps(["item"]);
 
 <template>
   <article class="item">
-    <h3 class="item__title">{{ item.name }}</h3>
+    <h3 class="item__title" :class="{ ['item__title--new']: item.is_new }">
+      {{ item.name }}
+    </h3>
     <span class="item__separator" />
     <span class="item__price">{{ item.price }} €</span>
     <div v-if="item.ingredients" class="item__ingredients">

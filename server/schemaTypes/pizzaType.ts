@@ -41,6 +41,12 @@ export const pizzaType = defineType({
             initialValue: true,
             validation: (v) => v.required()
         }),
+        defineField({
+            name: 'is_new',
+            title: 'Nouveauté',
+            type: 'boolean',
+            initialValue: false,
+        }),
     ],
     preview: {
         select: {
