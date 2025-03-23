@@ -25,7 +25,8 @@ const sections = computed(() => {
 });
 
 const globalConfiguration = computed(() => {
-  return data.value.configuration;
+  console.log(data.value)
+  return data.value.configuration[0];
 })
 
 const STARTERS = [
