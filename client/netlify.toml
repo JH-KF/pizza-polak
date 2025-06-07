@@ -1,0 +1,5 @@
+[functions]
+  node_bundler = "esbuild"
+
+[functions.schedule-deploy]
+  schedule = "0 5,19 * * *"  # At 5:00 and 19:00 UTC daily
