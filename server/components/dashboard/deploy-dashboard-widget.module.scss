@@ -1,0 +1,18 @@
+.container {
+    padding: 13px;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin: 13px 0px;
+    h3 {
+        margin: 0;
+    }
+}
+
+.loadingImage {
+    margin-top: 13px;
+}

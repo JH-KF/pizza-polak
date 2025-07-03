@@ -1,10 +1,11 @@
 import {defineConfig} from 'sanity';
 import {structureTool} from 'sanity/structure';
-import {visionTool} from '@sanity/vision';
+import {dashboardTool} from '@sanity/dashboard'
 import {frFRLocale} from '@sanity/locale-fr-fr';
 
 import {schemaTypes} from './schemaTypes';
 import OpeningDetails from './components/OpeningDetails';
+import { deployDashboardWidget } from './components/dashboard';
 
 
 // Define the actions that should be available for singleton documents
@@ -23,6 +24,7 @@ export default defineConfig({
   plugins: [
     frFRLocale(),
     structureTool(  {
+      title: "Edition",
     structure: (S) =>
       S.list()
         .title("Données")
@@ -59,7 +61,9 @@ export default defineConfig({
                 )
             )
         ]),
-  }), visionTool()],
+    }),
+    dashboardTool({ widgets: [deployDashboardWidget()]})
+],
 
   schema: {
     types: schemaTypes,

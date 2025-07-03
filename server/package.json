@@ -15,8 +15,8 @@
     "sanity"
   ],
   "dependencies": {
+    "@sanity/dashboard": "^4.1.3",
     "@sanity/locale-fr-fr": "^1.2.20",
-    "@sanity/vision": "^3.96.0",
     "html2pdf.js": "^0.10.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
