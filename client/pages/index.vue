@@ -25,7 +25,6 @@ const sections = computed(() => {
 });
 
 const globalConfiguration = computed(() => {
-  console.log(data.value)
   return data.value.configuration[0];
 })
 

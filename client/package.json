@@ -10,13 +10,13 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@fontsource/swanky-and-moo-moo": "^5.1.0",
-    "@nuxtjs/sanity": "^1.13.1",
-    "nuxt": "^3.14.1592",
+    "@fontsource/swanky-and-moo-moo": "^5.2.6",
+    "@nuxtjs/sanity": "^1.13.3",
+    "nuxt": "^3.17.6",
     "vue": "latest",
     "vue-router": "latest"
   },
   "devDependencies": {
-    "sass": "^1.82.0"
+    "sass": "^1.89.2"
   }
 }
