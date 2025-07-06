@@ -67,7 +67,7 @@ function Component() {
   return (
     <DashboardWidgetContainer>
       <div className={styles.container}>
-        <a href='https://pizza-polak.fr' target='_blank' rel='noopener noreferrer'>pizza-polak.fr</a>
+        <a href='https://polak-oizza.fr' target='_blank' rel='noopener noreferrer'>polak-pizza.fr</a>
         <div className={styles.header}>
             <h3>
                 Dernier déploiement : 
