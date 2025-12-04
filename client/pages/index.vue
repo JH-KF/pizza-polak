@@ -41,11 +41,11 @@ const STARTERS = [
 
 <template>
   <Hero />
-  <Section v-if="globalConfiguration.arancini_available" name="Entrées" :items="STARTERS" />
+  <!-- <Section v-if="globalConfiguration.arancini_available" name="Entrées" :items="STARTERS" />
   <Section
     v-for="section in PIZZA_SECTION"
     :key="section"
     :name="SECTION_LABEL[section]"
     :items="sections[section]"
-  ></Section>
+  ></Section> -->
 </template>
